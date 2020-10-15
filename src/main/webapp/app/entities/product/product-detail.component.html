@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="product">
+            <h2><span jhiTranslate="inventarioApp.product.detail.title">Product</span> {{ product.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="inventarioApp.product.name">Name</span></dt>
+                <dd>
+                    <span>{{ product.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="inventarioApp.product.description">Description</span></dt>
+                <dd>
+                    <span>{{ product.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="inventarioApp.product.cantidad">Cantidad</span></dt>
+                <dd>
+                    <span>{{ product.cantidad }}</span>
+                </dd>
+                <dt><span jhiTranslate="inventarioApp.product.ubicacion">Ubicacion</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'inventarioApp.Ubicacion.' + product.ubicacion }}">{{ product.ubicacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="inventarioApp.product.image1">Image 1</span></dt>
+                <dd>
+                    <div *ngIf="product.image1">
+                        <a (click)="openFile(product.image1ContentType, product.image1)">
+                            <img [src]="'data:' + product.image1ContentType + ';base64,' + product.image1" style="max-width: 100%;" alt="product image"/>
+                        </a>
+                        {{ product.image1ContentType }}, {{ byteSize(product.image1) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="inventarioApp.product.image2">Image 2</span></dt>
+                <dd>
+                    <div *ngIf="product.image2">
+                        <a (click)="openFile(product.image2ContentType, product.image2)">
+                            <img [src]="'data:' + product.image2ContentType + ';base64,' + product.image2" style="max-width: 100%;" alt="product image"/>
+                        </a>
+                        {{ product.image2ContentType }}, {{ byteSize(product.image2) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="inventarioApp.product.productCategory">Product Category</span></dt>
+                <dd>
+                    <div *ngIf="product.productCategory">
+                        <a [routerLink]="['/product-category', product.productCategory?.id, 'view']">{{ product.productCategory?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="inventarioApp.product.trastero">Trastero</span></dt>
+                <dd>
+                    <div *ngIf="product.trastero">
+                        <a [routerLink]="['/trastero-layout', product.trastero?.id, 'view']">{{ product.trastero?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product', product.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "inventarioApp": {
+    "movimiento": {
+      "home": {
+        "title": "Movimientos",
+        "createLabel": "Crear nuevo Movimiento",
+        "createOrEditLabel": "Crear o editar Movimiento",
+        "notFound": "Ningún Movimientos encontrado"
+      },
+      "created": "Un nuevo Movimiento ha sido creado con el identificador {{ param }}",
+      "updated": "Un Movimiento ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Movimiento ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Movimiento {{ id }}?"
+      },
+      "detail": {
+        "title": "Movimiento"
+      },
+      "whenDate": "When Date",
+      "description": "Description",
+      "cantidad": "Cantidad",
+      "user": "User",
+      "product": "Product"
+    }
+  }
+}

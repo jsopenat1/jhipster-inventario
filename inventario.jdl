@@ -1,0 +1,40 @@
+/** Product sold by the Online store */
+entity Product {
+ name String required
+ description String
+ cantidad BigDecimal required min(0)
+ ubicacion Ubicacion required
+ image1 ImageBlob
+ image2 ImageBlob
+}
+entity ProductCategory {
+ name String required
+ description String
+}
+
+enum Ubicacion {
+ CAJA_BLANCA, TRASTERO, CAJON_TELE
+}
+entity TrasteroLayout {
+ name String required
+ description String
+}
+
+entity Movimiento{
+whenDate Instant required
+description String	
+cantidad BigDecimal required min(1)
+}
+
+relationship ManyToOne {
+ Movimiento{user} to User
+}
+relationship OneToMany {
+ProductCategory{product} to Product{productCategory},
+TrasteroLayout{product} to Product{trastero},
+Product{movimiento} to Movimiento{product}
+}
+
+service * with serviceClass
+paginate Product, Movimiento, ProductCategory with pagination
+

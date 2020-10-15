@@ -1,0 +1,24 @@
+{
+  "inventarioApp": {
+    "trasteroLayout": {
+      "home": {
+        "title": "Trastero Layouts",
+        "createLabel": "Create a new Trastero Layout",
+        "createOrEditLabel": "Create or edit a Trastero Layout",
+        "notFound": "No Trastero Layouts found"
+      },
+      "created": "A new Trastero Layout is created with identifier {{ param }}",
+      "updated": "A Trastero Layout is updated with identifier {{ param }}",
+      "deleted": "A Trastero Layout is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Trastero Layout {{ id }}?"
+      },
+      "detail": {
+        "title": "Trastero Layout"
+      },
+      "name": "Name",
+      "description": "Description",
+      "product": "Product"
+    }
+  }
+}

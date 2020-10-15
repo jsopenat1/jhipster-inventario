@@ -48,6 +48,13 @@ public class CacheConfiguration {
             createCache(cm, com.jsopena.inventario.domain.User.class.getName());
             createCache(cm, com.jsopena.inventario.domain.Authority.class.getName());
             createCache(cm, com.jsopena.inventario.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.jsopena.inventario.domain.Product.class.getName());
+            createCache(cm, com.jsopena.inventario.domain.Product.class.getName() + ".movimientos");
+            createCache(cm, com.jsopena.inventario.domain.ProductCategory.class.getName());
+            createCache(cm, com.jsopena.inventario.domain.ProductCategory.class.getName() + ".products");
+            createCache(cm, com.jsopena.inventario.domain.TrasteroLayout.class.getName());
+            createCache(cm, com.jsopena.inventario.domain.TrasteroLayout.class.getName() + ".products");
+            createCache(cm, com.jsopena.inventario.domain.Movimiento.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
