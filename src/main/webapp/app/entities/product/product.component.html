@@ -1,24 +1,27 @@
 <div>
-    <h2 id="page-heading">
-        <span jhiTranslate="inventarioApp.product.home.title">Products</span>
+	<h2 id="page-heading">
+		<span jhiTranslate="inventarioApp.product.home.title">Products</span>
 
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-product" [routerLink]="['/product/new']">
-            <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="inventarioApp.product.home.createLabel">
-            Create a new Product
-            </span>
-        </button>
-    </h2>
+		<button *jhiHasAnyAuthority="'ROLE_ADMIN'" id="jh-create-entity"
+			class="btn btn-primary float-right jh-create-entity create-product"
+			[routerLink]="['/product/new']">
+			<fa-icon icon="plus"></fa-icon>
+			<span jhiTranslate="inventarioApp.product.home.createLabel">
+				Create a new Product </span>
+		</button>
+	</h2>
 
-    <jhi-alert-error></jhi-alert-error>
+	<jhi-alert-error></jhi-alert-error>
 
-    <jhi-alert></jhi-alert>
+	<jhi-alert></jhi-alert>
 
-    <div class="alert alert-warning" id="no-result" *ngIf="products?.length === 0">
-        <span jhiTranslate="inventarioApp.product.home.notFound">No products found</span>
-    </div>
+	<div class="alert alert-warning" id="no-result"
+		*ngIf="products?.length === 0">
+		<span jhiTranslate="inventarioApp.product.home.notFound">No
+			products found</span>
+	</div>
 
-    <div class="table-responsive" id="entities" *ngIf="products && products.length > 0">
+	<!--  <div class="table-responsive" id="entities" *ngIf="products && products.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
@@ -29,8 +32,8 @@
                     <th scope="col"  jhiSortBy="ubicacion"><span jhiTranslate="inventarioApp.product.ubicacion">Ubicacion</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="image1"><span jhiTranslate="inventarioApp.product.image1">Image 1</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="image2"><span jhiTranslate="inventarioApp.product.image2">Image 2</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="productCategory.name"><span jhiTranslate="inventarioApp.product.productCategory">Product Category</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="trastero.name"><span jhiTranslate="inventarioApp.product.trastero">Trastero</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="productCategory.description"><span jhiTranslate="inventarioApp.product.productCategory">Product Category</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="trastero.id"><span jhiTranslate="inventarioApp.product.trastero">Trastero</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -55,12 +58,12 @@
                     </td>
                     <td>
                         <div *ngIf="product.productCategory">
-                            <a [routerLink]="['/product-category', product.productCategory?.id, 'view']" >{{ product.productCategory?.name }}</a>
+                            <a [routerLink]="['/product-category', product.productCategory?.description, 'view']" >{{ product.productCategory?.description }}</a>
                         </div>
                     </td>
                     <td>
                         <div *ngIf="product.trastero">
-                            <a [routerLink]="['/trastero-layout', product.trastero?.id, 'view']" >{{ product.trastero?.name }}</a>
+                            <a [routerLink]="['/trastero-layout', product.trastero?.id, 'view']" >{{ product.trastero?.id }}</a>
                         </div>
                     </td>
                     <td class="text-right">
@@ -90,14 +93,93 @@
             </tbody>
         </table>
     </div>
+-->
 
-    <div *ngIf="products && products.length > 0">
-        <div class="row justify-content-center">
-            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
-        </div>
 
-        <div class="row justify-content-center">
-            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
-        </div>
-    </div>
+	<div *ngIf="products">
+		<div class="mb-2 d-flex justify-content-end align-items-center">
+		 <span class="mr-2 col-2">Filter by name</span>
+    	<input type="search" class="form-control" [(ngModel)]="filter">
+			<span class="mx-2 col-1">Sort by</span>
+			<div class="btn-group" role="group" jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+				<button type="button" class="btn btn-light" jhiSortBy="name">
+					<span class="d-flex"> 
+					<span jhiTranslate="inventarioApp.product.name">Name</span>&nbsp; 
+					<fa-icon [icon]="'sort'"></fa-icon>
+					</span>
+				</button>
+				<button type="button" class="btn btn-light" jhiSortBy="ubicacion">
+					<span class="d-flex"> 
+					<span jhiTranslate="inventarioApp.product.ubicacion">Ubicacion</span>&nbsp; 
+					<fa-icon [icon]="'sort'"></fa-icon>
+					</span>
+				</button>
+				<button type="button" class="btn btn-light"	jhiSortBy="productCategory.id">
+					<span class="d-flex"> 
+					<span jhiTranslate="inventarioApp.product.productCategory">
+						Categoria</span>&nbsp; 
+					<fa-icon [icon]="'sort'"></fa-icon>
+					</span>
+				</button>
+			</div>
+		</div>
+
+
+		<div class="list-group">
+			<a class="list-group-item list-group-item-action flex-column align-items-start"
+				*ngFor="let product of (products | pureFilter:filter:'name') trackBy: trackId">
+				<div class="row">
+					<div class="col-2 col-xs-12 justify-content-center">
+						<img
+							[src]="'data:' + product.image1ContentType +  ';base64,' + product.image1"
+							style="max-height: 150px;" alt="product image1" />
+					</div>
+					<div class="col col-xs-12">
+						<div class="d-flex w-100 justify-content-between">
+							<a [routerLink]="['/product', product.id, 'view']">
+								<h5 class="mb-1">{{product.name}}</h5>
+							</a> 
+							<small *ngIf="product.productCategory"> 
+							<a	[routerLink]="['/product-category', product.productCategory?.id, 'view']">
+									Categoria: {{product.productCategory?.description}} </a>
+							</small>
+						</div>
+						<small class="mb-1">{{product.description}}</small>
+						<p>
+							<small jhiTranslate="inventarioApp.product.cantidad">Cantidad</small>
+							{{product.cantidad}}<br> <small
+								jhiTranslate="inventarioApp.product.ubicacion">Ubicacion</small>
+							{{product.ubicacion}}
+						</p>
+						<div *jhiHasAnyAuthority="'ROLE_ADMIN'">
+							<button type="submit"	[routerLink]="['/product',product.id,'edit']"
+								class="btn btn-primary btn-sm">
+								<fa-icon [icon]="'pencil-alt'"></fa-icon>
+								<span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+							</button>
+							<button type="submit" (click)="delete(product)"
+								class="btn btn-danger btn-sm">
+								<fa-icon [icon]="'times'"></fa-icon>
+								<span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div *ngIf="products && products.length > 0">
+		<div class="row justify-content-center">
+			<jhi-item-count [page]="page" [total]="totalItems"
+				[itemsPerPage]="itemsPerPage"></jhi-item-count>
+		</div>
+
+		<div class="row justify-content-center">
+			<ngb-pagination [collectionSize]="totalItems"
+				[(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5"
+				[rotate]="true" [boundaryLinks]="true"
+				(pageChange)="loadPage($event)"></ngb-pagination>
+		</div>
+	</div>
 </div>
