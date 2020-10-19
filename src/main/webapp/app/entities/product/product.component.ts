@@ -24,6 +24,7 @@ export class ProductComponent implements OnInit, OnDestroy {
   predicate!: string;
   ascending!: boolean;
   ngbPaginationPage = 1;
+  filter!:string;
 
   constructor(
     protected productService: ProductService,
@@ -48,6 +49,8 @@ export class ProductComponent implements OnInit, OnDestroy {
         () => this.onError()
       );
   }
+  
+ 
 
   ngOnInit(): void {
     this.handleNavigation();
