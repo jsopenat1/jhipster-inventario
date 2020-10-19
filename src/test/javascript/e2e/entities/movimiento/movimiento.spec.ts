@@ -16,6 +16,7 @@ describe('Movimiento e2e test', () => {
   let movimientoUpdatePage: MovimientoUpdatePage;
   /* let movimientoDeleteDialog: MovimientoDeleteDialog; */
 
+
   before(async () => {
     await browser.get('/');
     navBarPage = new NavBarPage();

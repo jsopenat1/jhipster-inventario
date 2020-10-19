@@ -6,6 +6,7 @@ import com.jsopena.inventario.domain.ProductCategory;
 import com.jsopena.inventario.repository.ProductRepository;
 import com.jsopena.inventario.service.ProductService;
 
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -7,6 +7,7 @@ import com.jsopena.inventario.domain.Product;
 import com.jsopena.inventario.repository.MovimientoRepository;
 import com.jsopena.inventario.service.MovimientoService;
 
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

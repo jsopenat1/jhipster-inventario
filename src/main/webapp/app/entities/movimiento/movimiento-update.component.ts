@@ -14,6 +14,7 @@ import { UserService } from 'app/core/user/user.service';
 import { IProduct } from 'app/shared/model/product.model';
 import { ProductService } from 'app/entities/product/product.service';
 
+
 type SelectableEntity = IUser | IProduct;
 
 @Component({

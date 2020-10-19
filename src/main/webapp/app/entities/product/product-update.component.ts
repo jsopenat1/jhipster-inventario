@@ -16,6 +16,7 @@ import { TrasteroLayoutService } from 'app/entities/trastero-layout/trastero-lay
 
 type SelectableEntity = IProductCategory | ITrasteroLayout;
 
+
 @Component({
   selector: 'jhi-product-update',
   templateUrl: './product-update.component.html',

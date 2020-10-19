@@ -10,6 +10,7 @@ import * as path from 'path';
 
 const expect = chai.expect;
 
+
 describe('Product e2e test', () => {
   let navBarPage: NavBarPage;
   let signInPage: SignInPage;
