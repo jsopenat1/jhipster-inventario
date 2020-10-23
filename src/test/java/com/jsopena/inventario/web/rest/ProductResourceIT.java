@@ -2,6 +2,7 @@ package com.jsopena.inventario.web.rest;
 
 import com.jsopena.inventario.InventarioApp;
 import com.jsopena.inventario.domain.Product;
+import com.jsopena.inventario.domain.ProductCategory;
 import com.jsopena.inventario.repository.ProductRepository;
 import com.jsopena.inventario.service.ProductService;
 
@@ -85,6 +86,16 @@ public class ProductResourceIT {
             .image1ContentType(DEFAULT_IMAGE_1_CONTENT_TYPE)
             .image2(DEFAULT_IMAGE_2)
             .image2ContentType(DEFAULT_IMAGE_2_CONTENT_TYPE);
+        // Add required entity
+        ProductCategory productCategory;
+        if (TestUtil.findAll(em, ProductCategory.class).isEmpty()) {
+            productCategory = ProductCategoryResourceIT.createEntity(em);
+            em.persist(productCategory);
+            em.flush();
+        } else {
+            productCategory = TestUtil.findAll(em, ProductCategory.class).get(0);
+        }
+        product.setProductCategory(productCategory);
         return product;
     }
     /**
@@ -103,6 +114,16 @@ public class ProductResourceIT {
             .image1ContentType(UPDATED_IMAGE_1_CONTENT_TYPE)
             .image2(UPDATED_IMAGE_2)
             .image2ContentType(UPDATED_IMAGE_2_CONTENT_TYPE);
+        // Add required entity
+        ProductCategory productCategory;
+        if (TestUtil.findAll(em, ProductCategory.class).isEmpty()) {
+            productCategory = ProductCategoryResourceIT.createUpdatedEntity(em);
+            em.persist(productCategory);
+            em.flush();
+        } else {
+            productCategory = TestUtil.findAll(em, ProductCategory.class).get(0);
+        }
+        product.setProductCategory(productCategory);
         return product;
     }
 

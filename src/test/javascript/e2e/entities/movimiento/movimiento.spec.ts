@@ -1,7 +1,11 @@
-import { browser, ExpectedConditions as ec, protractor, promise } from 'protractor';
+import { browser, ExpectedConditions as ec /* , protractor, promise */ } from 'protractor';
 import { NavBarPage, SignInPage } from '../../page-objects/jhi-page-objects';
 
-import { MovimientoComponentsPage, MovimientoDeleteDialog, MovimientoUpdatePage } from './movimiento.page-object';
+import {
+  MovimientoComponentsPage,
+  /* MovimientoDeleteDialog, */
+  MovimientoUpdatePage,
+} from './movimiento.page-object';
 
 const expect = chai.expect;
 
@@ -10,7 +14,7 @@ describe('Movimiento e2e test', () => {
   let signInPage: SignInPage;
   let movimientoComponentsPage: MovimientoComponentsPage;
   let movimientoUpdatePage: MovimientoUpdatePage;
-  let movimientoDeleteDialog: MovimientoDeleteDialog;
+  /* let movimientoDeleteDialog: MovimientoDeleteDialog; */
 
   before(async () => {
     await browser.get('/');
@@ -35,42 +39,40 @@ describe('Movimiento e2e test', () => {
     await movimientoUpdatePage.cancel();
   });
 
-  it('should create and save Movimientos', async () => {
-    const nbButtonsBeforeCreate = await movimientoComponentsPage.countDeleteButtons();
+  /* it('should create and save Movimientos', async () => {
+        const nbButtonsBeforeCreate = await movimientoComponentsPage.countDeleteButtons();
 
-    await movimientoComponentsPage.clickOnCreateButton();
+        await movimientoComponentsPage.clickOnCreateButton();
 
-    await promise.all([
-      movimientoUpdatePage.setWhenDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
-      movimientoUpdatePage.setDescriptionInput('description'),
-      movimientoUpdatePage.setCantidadInput('5'),
-      movimientoUpdatePage.userSelectLastOption(),
-      movimientoUpdatePage.productSelectLastOption(),
-    ]);
+        await promise.all([
+            movimientoUpdatePage.setWhenDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
+            movimientoUpdatePage.setDescriptionInput('description'),
+            movimientoUpdatePage.setCantidadInput('5'),
+            movimientoUpdatePage.userSelectLastOption(),
+            movimientoUpdatePage.productSelectLastOption(),
+        ]);
 
-    expect(await movimientoUpdatePage.getWhenDateInput()).to.contain(
-      '2001-01-01T02:30',
-      'Expected whenDate value to be equals to 2000-12-31'
-    );
-    expect(await movimientoUpdatePage.getDescriptionInput()).to.eq('description', 'Expected Description value to be equals to description');
-    expect(await movimientoUpdatePage.getCantidadInput()).to.eq('5', 'Expected cantidad value to be equals to 5');
+        expect(await movimientoUpdatePage.getWhenDateInput()).to.contain('2001-01-01T02:30', 'Expected whenDate value to be equals to 2000-12-31');
+        expect(await movimientoUpdatePage.getDescriptionInput()).to.eq('description', 'Expected Description value to be equals to description');
+        expect(await movimientoUpdatePage.getCantidadInput()).to.eq('5', 'Expected cantidad value to be equals to 5');
 
-    await movimientoUpdatePage.save();
-    expect(await movimientoUpdatePage.getSaveButton().isPresent(), 'Expected save button disappear').to.be.false;
+        await movimientoUpdatePage.save();
+        expect(await movimientoUpdatePage.getSaveButton().isPresent(), 'Expected save button disappear').to.be.false;
 
-    expect(await movimientoComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeCreate + 1, 'Expected one more entry in the table');
-  });
+        expect(await movimientoComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeCreate + 1, 'Expected one more entry in the table');
+    }); */
 
-  it('should delete last Movimiento', async () => {
-    const nbButtonsBeforeDelete = await movimientoComponentsPage.countDeleteButtons();
-    await movimientoComponentsPage.clickOnLastDeleteButton();
+  /* it('should delete last Movimiento', async () => {
+        const nbButtonsBeforeDelete = await movimientoComponentsPage.countDeleteButtons();
+        await movimientoComponentsPage.clickOnLastDeleteButton();
 
-    movimientoDeleteDialog = new MovimientoDeleteDialog();
-    expect(await movimientoDeleteDialog.getDialogTitle()).to.eq('inventarioApp.movimiento.delete.question');
-    await movimientoDeleteDialog.clickOnConfirmButton();
+        movimientoDeleteDialog = new MovimientoDeleteDialog();
+        expect(await movimientoDeleteDialog.getDialogTitle())
+            .to.eq('inventarioApp.movimiento.delete.question');
+        await movimientoDeleteDialog.clickOnConfirmButton();
 
-    expect(await movimientoComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeDelete - 1);
-  });
+        expect(await movimientoComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeDelete - 1);
+    }); */
 
   after(async () => {
     await navBarPage.autoSignOut();

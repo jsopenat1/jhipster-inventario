@@ -103,16 +103,22 @@
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="inventarioApp.product.productCategory" for="field_productCategory">Product Category</label>
                     <select class="form-control" id="field_productCategory" name="productCategory" formControlName="productCategory">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="productCategoryOption.id === editForm.get('productCategory')!.value?.id ? editForm.get('productCategory')!.value : productCategoryOption" *ngFor="let productCategoryOption of productcategories; trackBy: trackById">{{ productCategoryOption.id }}</option>
+                        <option *ngIf="!editForm.get('productCategory')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="productCategoryOption.id === editForm.get('productCategory')!.value?.id ? editForm.get('productCategory')!.value : productCategoryOption" *ngFor="let productCategoryOption of productcategories; trackBy: trackById">{{ productCategoryOption.name }}</option>
                     </select>
+                </div>
+                <div *ngIf="editForm.get('productCategory')!.invalid && (editForm.get('productCategory')!.dirty || editForm.get('productCategory')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('productCategory')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
                 </div>
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="inventarioApp.product.trastero" for="field_trastero">Trastero</label>
                     <select class="form-control" id="field_trastero" name="trastero" formControlName="trastero">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="trasteroLayoutOption.id === editForm.get('trastero')!.value?.id ? editForm.get('trastero')!.value : trasteroLayoutOption" *ngFor="let trasteroLayoutOption of trasterolayouts; trackBy: trackById">{{ trasteroLayoutOption.id }}</option>
+                        <option [ngValue]="trasteroLayoutOption.id === editForm.get('trastero')!.value?.id ? editForm.get('trastero')!.value : trasteroLayoutOption" *ngFor="let trasteroLayoutOption of trasterolayouts; trackBy: trackById">{{ trasteroLayoutOption.name }}</option>
                     </select>
                 </div>
             </div>

@@ -22,12 +22,12 @@
                 </dd>
                 <dt><span jhiTranslate="inventarioApp.movimiento.user">User</span></dt>
                 <dd>
-                    {{ movimiento.user?.id }}
+                    {{ movimiento.user?.login }}
                 </dd>
                 <dt><span jhiTranslate="inventarioApp.movimiento.product">Product</span></dt>
                 <dd>
                     <div *ngIf="movimiento.product">
-                        <a [routerLink]="['/product', movimiento.product?.id, 'view']">{{ movimiento.product?.id }}</a>
+                        <a [routerLink]="['/product', movimiento.product?.id, 'view']">{{ movimiento.product?.name }}</a>
                     </div>
                 </dd>
             </dl>

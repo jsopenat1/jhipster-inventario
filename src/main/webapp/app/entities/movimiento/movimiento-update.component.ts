@@ -30,8 +30,8 @@ export class MovimientoUpdateComponent implements OnInit {
     whenDate: [null, [Validators.required]],
     description: [],
     cantidad: [null, [Validators.required, Validators.min(1)]],
-    user: [],
-    product: [],
+    user: [null, Validators.required],
+    product: [null, Validators.required],
   });
 
   constructor(

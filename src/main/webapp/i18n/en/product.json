@@ -18,11 +18,11 @@
       },
       "name": "Name",
       "description": "Description",
-      "cantidad": "Quantity",
-      "ubicacion": "Location",
+      "cantidad": "Cantidad",
+      "ubicacion": "Ubicacion",
       "image1": "Image 1",
       "image2": "Image 2",
-      "movimiento": "Movement",
+      "movimiento": "Movimiento",
       "productCategory": "Product Category",
       "trastero": "Trastero"
     }

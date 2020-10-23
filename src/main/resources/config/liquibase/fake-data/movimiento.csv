@@ -1,11 +1,11 @@
-id;when_date;description;cantidad
-1;2020-10-15T13:47:19;Berkshire Architect revolutionary;82849
-2;2020-10-15T11:50:23;calculating Representative end-to-end;97111
-3;2020-10-15T11:26:57;schemas Land Personal Loan Account;65140
-4;2020-10-14T21:03:15;Liaison Guatemala;51785
-5;2020-10-14T20:01:20;parsing Shoes;32994
-6;2020-10-15T16:34:06;Handmade Soft Chips International withdrawal;46809
-7;2020-10-15T17:10:35;Licensed Granite Ball;11348
-8;2020-10-15T06:35:32;Paradigm Incredible Soft Cheese;6308
-9;2020-10-15T11:15:08;Borders networks channels;52929
-10;2020-10-15T12:47:25;green;89744
+id;when_date;description;cantidad;user_id;product_id
+1;2020-10-15T13:47:19;Berkshire Architect revolutionary;82849;1;1
+2;2020-10-14T20:38:33;Zambian Kwacha Identity Virtual;23987;2;2
+3;2020-10-15T07:06:30;Land Personal Loan Account invoice;40654;2;3
+4;2020-10-15T13:23:55;sexy AI;84097;2;4
+5;2020-10-15T13:38:10;adapter Senior;74082;2;5
+6;2020-10-14T18:07:18;Pakistan Rupee grow Movies;5833;2;6
+7;2020-10-15T04:53:03;Cotton;66057;2;7
+8;2020-10-15T09:34:02;process improvement;78651;1;8
+9;2020-10-15T11:15:08;Borders networks channels;52929;1;9
+10;2020-10-15T11:03:18;Unbranded Rubber Gloves;82353;2;10

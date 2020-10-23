@@ -65,7 +65,8 @@ public class Product implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<Movimiento> movimientos = new HashSet<>();
 
-    @ManyToOne
+    @ManyToOne(optional = false)
+    @NotNull
     @JsonIgnoreProperties(value = "products", allowSetters = true)
     private ProductCategory productCategory;
 

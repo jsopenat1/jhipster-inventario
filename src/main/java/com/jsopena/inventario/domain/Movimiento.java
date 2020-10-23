@@ -37,11 +37,13 @@ public class Movimiento implements Serializable {
     @Column(name = "cantidad", precision = 21, scale = 2, nullable = false)
     private BigDecimal cantidad;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
+    @NotNull
     @JsonIgnoreProperties(value = "movimientos", allowSetters = true)
     private User user;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
+    @NotNull
     @JsonIgnoreProperties(value = "movimientos", allowSetters = true)
     private Product product;
 

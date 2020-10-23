@@ -27,12 +27,12 @@ cantidad BigDecimal required min(1)
 }
 
 relationship ManyToOne {
- Movimiento{user} to User
+ Movimiento{user(login) required} to User
 }
 relationship OneToMany {
-ProductCategory{product} to Product{productCategory},
-TrasteroLayout{product} to Product{trastero},
-Product{movimiento} to Movimiento{product}
+ProductCategory{product} to Product{productCategory(name) required},
+TrasteroLayout{product} to Product{trastero(name)},
+Product{movimiento} to Movimiento{product(name) required}
 }
 
 service * with serviceClass

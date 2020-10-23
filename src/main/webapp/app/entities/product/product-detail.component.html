@@ -45,13 +45,13 @@
                 <dt><span jhiTranslate="inventarioApp.product.productCategory">Product Category</span></dt>
                 <dd>
                     <div *ngIf="product.productCategory">
-                        <a [routerLink]="['/product-category', product.productCategory?.id, 'view']">{{ product.productCategory?.id }}</a>
+                        <a [routerLink]="['/product-category', product.productCategory?.id, 'view']">{{ product.productCategory?.name }}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="inventarioApp.product.trastero">Trastero</span></dt>
                 <dd>
                     <div *ngIf="product.trastero">
-                        <a [routerLink]="['/trastero-layout', product.trastero?.id, 'view']">{{ product.trastero?.id }}</a>
+                        <a [routerLink]="['/trastero-layout', product.trastero?.id, 'view']">{{ product.trastero?.name }}</a>
                     </div>
                 </dd>
             </dl>

@@ -26,8 +26,8 @@
                     <th scope="col"  jhiSortBy="whenDate"><span jhiTranslate="inventarioApp.movimiento.whenDate">When Date</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="description"><span jhiTranslate="inventarioApp.movimiento.description">Description</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="cantidad"><span jhiTranslate="inventarioApp.movimiento.cantidad">Cantidad</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="user.id"><span jhiTranslate="inventarioApp.movimiento.user">User</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="product.id"><span jhiTranslate="inventarioApp.movimiento.product">Product</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="user.login"><span jhiTranslate="inventarioApp.movimiento.user">User</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="product.name"><span jhiTranslate="inventarioApp.movimiento.product">Product</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -38,11 +38,11 @@
                     <td>{{ movimiento.description }}</td>
                     <td>{{ movimiento.cantidad }}</td>
                     <td>
-                        {{ movimiento.user?.id }}
+                        {{ movimiento.user?.login }}
                     </td>
                     <td>
                         <div *ngIf="movimiento.product">
-                            <a [routerLink]="['/product', movimiento.product?.id, 'view']" >{{ movimiento.product?.id }}</a>
+                            <a [routerLink]="['/product', movimiento.product?.id, 'view']" >{{ movimiento.product?.name }}</a>
                         </div>
                     </td>
                     <td class="text-right">

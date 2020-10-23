@@ -27,15 +27,17 @@
       "relationshipType": "many-to-one",
       "otherEntityName": "user",
       "otherEntityRelationshipName": "movimiento",
+      "relationshipValidateRules": "required",
       "relationshipName": "user",
-      "otherEntityField": "id"
+      "otherEntityField": "login"
     },
     {
       "relationshipType": "many-to-one",
       "otherEntityName": "product",
       "otherEntityRelationshipName": "movimiento",
+      "relationshipValidateRules": "required",
       "relationshipName": "product",
-      "otherEntityField": "id"
+      "otherEntityField": "name"
     }
   ],
   "changelogDate": "20201015171223",

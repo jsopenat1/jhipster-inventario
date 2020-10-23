@@ -3,27 +3,27 @@
     "product": {
       "home": {
         "title": "Products",
-        "createLabel": "Crear nuevo Producto",
-        "createOrEditLabel": "Crear o editar Producto",
-        "notFound": "Ningún Products encontrado"
+        "createLabel": "Crear nuevo Product",
+        "createOrEditLabel": "Crear o editar Product",
+        "notFound": "NingÃºn Products encontrado"
       },
-      "created": "Un nuevo Producto ha sido creado con el identificador {{ param }}",
-      "updated": "Un Producto ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Producto ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Product ha sido creado con el identificador {{ param }}",
+      "updated": "Un Product ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Product ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Product {{ id }}?"
+        "question": "Â¿Seguro que quiere eliminar Product {{ id }}?"
       },
       "detail": {
-        "title": "Producto"
+        "title": "Product"
       },
-      "name": "Nombre",
-      "description": "Descripcion",
+      "name": "Name",
+      "description": "Description",
       "cantidad": "Cantidad",
       "ubicacion": "Ubicacion",
-      "image1": "Imagen 1",
-      "image2": "Imagen 2",
+      "image1": "Image 1",
+      "image2": "Image 2",
       "movimiento": "Movimiento",
-      "productCategory": "Categoria",
+      "productCategory": "Product Category",
       "trastero": "Trastero"
     }
   }

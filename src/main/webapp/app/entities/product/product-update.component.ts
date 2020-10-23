@@ -35,7 +35,7 @@ export class ProductUpdateComponent implements OnInit {
     image1ContentType: [],
     image2: [],
     image2ContentType: [],
-    productCategory: [],
+    productCategory: [null, Validators.required],
     trastero: [],
   });
 

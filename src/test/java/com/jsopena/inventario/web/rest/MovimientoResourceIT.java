@@ -2,6 +2,8 @@ package com.jsopena.inventario.web.rest;
 
 import com.jsopena.inventario.InventarioApp;
 import com.jsopena.inventario.domain.Movimiento;
+import com.jsopena.inventario.domain.User;
+import com.jsopena.inventario.domain.Product;
 import com.jsopena.inventario.repository.MovimientoRepository;
 import com.jsopena.inventario.service.MovimientoService;
 
@@ -67,6 +69,21 @@ public class MovimientoResourceIT {
             .whenDate(DEFAULT_WHEN_DATE)
             .description(DEFAULT_DESCRIPTION)
             .cantidad(DEFAULT_CANTIDAD);
+        // Add required entity
+        User user = UserResourceIT.createEntity(em);
+        em.persist(user);
+        em.flush();
+        movimiento.setUser(user);
+        // Add required entity
+        Product product;
+        if (TestUtil.findAll(em, Product.class).isEmpty()) {
+            product = ProductResourceIT.createEntity(em);
+            em.persist(product);
+            em.flush();
+        } else {
+            product = TestUtil.findAll(em, Product.class).get(0);
+        }
+        movimiento.setProduct(product);
         return movimiento;
     }
     /**
@@ -80,6 +97,21 @@ public class MovimientoResourceIT {
             .whenDate(UPDATED_WHEN_DATE)
             .description(UPDATED_DESCRIPTION)
             .cantidad(UPDATED_CANTIDAD);
+        // Add required entity
+        User user = UserResourceIT.createEntity(em);
+        em.persist(user);
+        em.flush();
+        movimiento.setUser(user);
+        // Add required entity
+        Product product;
+        if (TestUtil.findAll(em, Product.class).isEmpty()) {
+            product = ProductResourceIT.createUpdatedEntity(em);
+            em.persist(product);
+            em.flush();
+        } else {
+            product = TestUtil.findAll(em, Product.class).get(0);
+        }
+        movimiento.setProduct(product);
         return movimiento;
     }
 

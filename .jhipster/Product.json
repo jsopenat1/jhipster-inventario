@@ -51,15 +51,16 @@
       "relationshipType": "many-to-one",
       "otherEntityName": "productCategory",
       "otherEntityRelationshipName": "product",
+      "relationshipValidateRules": "required",
       "relationshipName": "productCategory",
-      "otherEntityField": "id"
+      "otherEntityField": "name"
     },
     {
       "relationshipType": "many-to-one",
       "otherEntityName": "trasteroLayout",
       "otherEntityRelationshipName": "product",
       "relationshipName": "trastero",
-      "otherEntityField": "id"
+      "otherEntityField": "name"
     }
   ],
   "changelogDate": "20201015170923",
