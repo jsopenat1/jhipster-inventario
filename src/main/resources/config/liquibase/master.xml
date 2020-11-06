@@ -14,10 +14,10 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201015170923_added_entity_Product.xml" relativeToChangelogFile="false"/>
+    <!--<include file="config/liquibase/changelog/20201015170923_added_entity_Product.xml" relativeToChangelogFile="false"/>-->
     <include file="config/liquibase/changelog/20201015171023_added_entity_ProductCategory.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201015171123_added_entity_TrasteroLayout.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201015171223_added_entity_Movimiento.xml" relativeToChangelogFile="false"/>
+    <!--<include file="config/liquibase/changelog/20201015171223_added_entity_Movimiento.xml" relativeToChangelogFile="false"/>-->
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20201015170923_added_entity_constraints_Product.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201015171223_added_entity_constraints_Movimiento.xml" relativeToChangelogFile="false"/>
