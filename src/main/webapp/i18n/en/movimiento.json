@@ -2,23 +2,23 @@
   "inventarioApp": {
     "movimiento": {
       "home": {
-        "title": "Movimientos",
-        "createLabel": "Create a new Movimiento",
-        "createOrEditLabel": "Create or edit a Movimiento",
-        "notFound": "No Movimientos found"
+        "title": "Movements",
+        "createLabel": "Create a new Movement",
+        "createOrEditLabel": "Create or edit a Movement",
+        "notFound": "No Movements found"
       },
-      "created": "A new Movimiento is created with identifier {{ param }}",
-      "updated": "A Movimiento is updated with identifier {{ param }}",
-      "deleted": "A Movimiento is deleted with identifier {{ param }}",
+      "created": "A new Movement is created with identifier {{ param }}",
+      "updated": "A Movement is updated with identifier {{ param }}",
+      "deleted": "A Movement is deleted with identifier {{ param }}",
       "delete": {
-        "question": "Are you sure you want to delete Movimiento {{ id }}?"
+        "question": "Are you sure you want to delete the Movement {{ id }}?"
       },
       "detail": {
-        "title": "Movimiento"
+        "title": "Movement"
       },
       "whenDate": "When Date",
       "description": "Description",
-      "cantidad": "Cantidad",
+      "cantidad": "Quantity",
       "user": "User",
       "product": "Product"
     }

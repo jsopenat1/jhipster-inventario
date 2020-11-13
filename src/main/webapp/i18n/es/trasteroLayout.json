@@ -5,20 +5,20 @@
         "title": "Trastero Layouts",
         "createLabel": "Crear nuevo Trastero Layout",
         "createOrEditLabel": "Crear o editar Trastero Layout",
-        "notFound": "NingÃºn Trastero Layouts encontrado"
+        "notFound": "Ningún Trastero Layouts encontrado"
       },
       "created": "Un nuevo Trastero Layout ha sido creado con el identificador {{ param }}",
       "updated": "Un Trastero Layout ha sido actualizado con el identificador {{ param }}",
       "deleted": "Un Trastero Layout ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "Â¿Seguro que quiere eliminar Trastero Layout {{ id }}?"
+        "question": "¿Seguro que quiere eliminar Trastero Layout {{ id }}?"
       },
       "detail": {
         "title": "Trastero Layout"
       },
-      "name": "Name",
-      "description": "Description",
-      "product": "Product"
+      "name": "Nombre",
+      "description": "Descripción",
+      "product": "Producto"
     }
   }
 }

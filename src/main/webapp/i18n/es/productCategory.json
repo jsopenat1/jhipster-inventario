@@ -2,23 +2,23 @@
   "inventarioApp": {
     "productCategory": {
       "home": {
-        "title": "Product Categories",
-        "createLabel": "Crear nuevo Product Category",
-        "createOrEditLabel": "Crear o editar Product Category",
-        "notFound": "NingÃºn Product Categories encontrado"
+        "title": "Categorías",
+        "createLabel": "Crear nueva Categoria",
+        "createOrEditLabel": "Crear o editar Categoría",
+        "notFound": "Ninguna Categoría encontrada"
       },
-      "created": "Un nuevo Product Category ha sido creado con el identificador {{ param }}",
-      "updated": "Un Product Category ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Product Category ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva Categoría ha sido creado con el identificador {{ param }}",
+      "updated": "Una nueva Categoría ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Una nueva Categoría ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "Â¿Seguro que quiere eliminar Product Category {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la Categoría {{ id }}?"
       },
       "detail": {
-        "title": "Product Category"
+        "title": "Categoría"
       },
-      "name": "Name",
-      "description": "Description",
-      "product": "Product"
+      "name": "Nombre",
+      "description": "Descripción",
+      "product": "Producto"
     }
   }
 }

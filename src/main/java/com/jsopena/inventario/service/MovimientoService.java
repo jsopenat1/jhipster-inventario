@@ -2,6 +2,9 @@ package com.jsopena.inventario.service;
 
 import com.jsopena.inventario.domain.Movimiento;
 import com.jsopena.inventario.repository.MovimientoRepository;
+import com.jsopena.inventario.security.AuthoritiesConstants;
+import com.jsopena.inventario.security.SecurityUtils;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,7 +50,10 @@ public class MovimientoService {
     @Transactional(readOnly = true)
     public Page<Movimiento> findAll(Pageable pageable) {
         log.debug("Request to get all Movimientos");
-        return movimientoRepository.findAll(pageable);
+        if (SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.ADMIN)) {
+                  return movimientoRepository.findAll(pageable);
+              } else
+                  return movimientoRepository.findByUserIsCurrentUser(pageable);
     }
 
 
@@ -60,7 +66,10 @@ public class MovimientoService {
     @Transactional(readOnly = true)
     public Optional<Movimiento> findOne(Long id) {
         log.debug("Request to get Movimiento : {}", id);
-        return movimientoRepository.findById(id);
+        if (SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.ADMIN)) {
+                  return movimientoRepository.findById(id);
+              } else
+                  return movimientoRepository.findOneByIdAndCustomerUserLogin(id);        
     }
 
     /**

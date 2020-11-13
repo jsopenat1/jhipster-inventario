@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -46,6 +47,7 @@ public class TrasteroLayoutResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/trastero-layouts")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<TrasteroLayout> createTrasteroLayout(@Valid @RequestBody TrasteroLayout trasteroLayout) throws URISyntaxException {
         log.debug("REST request to save TrasteroLayout : {}", trasteroLayout);
         if (trasteroLayout.getId() != null) {
@@ -67,6 +69,7 @@ public class TrasteroLayoutResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/trastero-layouts")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<TrasteroLayout> updateTrasteroLayout(@Valid @RequestBody TrasteroLayout trasteroLayout) throws URISyntaxException {
         log.debug("REST request to update TrasteroLayout : {}", trasteroLayout);
         if (trasteroLayout.getId() == null) {
@@ -109,6 +112,7 @@ public class TrasteroLayoutResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/trastero-layouts/{id}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<Void> deleteTrasteroLayout(@PathVariable Long id) {
         log.debug("REST request to delete TrasteroLayout : {}", id);
         trasteroLayoutService.delete(id);

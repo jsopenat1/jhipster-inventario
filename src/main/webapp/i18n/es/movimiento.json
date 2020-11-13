@@ -5,22 +5,22 @@
         "title": "Movimientos",
         "createLabel": "Crear nuevo Movimiento",
         "createOrEditLabel": "Crear o editar Movimiento",
-        "notFound": "NingÃºn Movimientos encontrado"
+        "notFound": "Ningún Movimiento encontrado"
       },
       "created": "Un nuevo Movimiento ha sido creado con el identificador {{ param }}",
       "updated": "Un Movimiento ha sido actualizado con el identificador {{ param }}",
       "deleted": "Un Movimiento ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "Â¿Seguro que quiere eliminar Movimiento {{ id }}?"
+        "question": "¿Seguro que quiere eliminar Movimiento {{ id }}?"
       },
       "detail": {
         "title": "Movimiento"
       },
-      "whenDate": "When Date",
-      "description": "Description",
+      "whenDate": "Cuando",
+      "description": "Descripción",
       "cantidad": "Cantidad",
-      "user": "User",
-      "product": "Product"
+      "user": "Usuario",
+      "product": "Producto"
     }
   }
 }
